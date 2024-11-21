@@ -3,9 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vase</title>
+    <title>Vase Project</title>
+    <link rel="stylesheet" href="CSS/general.css" />
   </head>
   <body>
-    <h1>Hi Here is AI world ---</h1>
+    <header>
+      <nav class="responsive-nav">
+        <div class="menu-toggle" id="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#vase">Vase</a></li>
+          <li><a href="#vas-history">VAS History</a></li>
+          <li><a href="#vas-future">VAS Future</a></li>
+        </ul>
+      </nav>
+      <h1 id="vase">VASE</h1>
+    </header>
+
+    <main>
+      <!-- Horizontal Scrolling Sections -->
+      <section id="vas-history" class="horizontal-scroll">
+        <div class="card">VAS History 1</div>
+        <div class="card">VAS History 2</div>
+        <div class="card">VAS History 3</div>
+        <div class="card">VAS History 4</div>
+      </section>
+
+      <section id="vas-future" class="horizontal-scroll">
+        <div class="card">VAS Future 1</div>
+        <div class="card">VAS Future 2</div>
+        <div class="card">VAS Future 3</div>
+        <div class="card">VAS Future 4</div>
+      </section>
+
+      <!-- New Content Sections -->
+      <section class="luxury-section" id="about">
+        <h2>About VASE</h2>
+        <p>
+          VASE combines timeless elegance and innovative design, creating pieces
+          that captivate and inspire. Each vase represents the perfect balance
+          between function and beauty, elevating any space into a luxurious
+          haven.
+        </p>
+      </section>
+
+      <section class="luxury-section" id="features">
+        <h2>Key Features</h2>
+        <ul>
+          <li>Handcrafted with precision and care</li>
+          <li>Premium materials that last a lifetime</li>
+          <li>Exclusive designs that exude elegance</li>
+        </ul>
+      </section>
+
+      <section class="luxury-section" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">Image 1</div>
+          <div class="gallery-item">Image 2</div>
+          <div class="gallery-item">Image 3</div>
+          <div class="gallery-item">Image 4</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Vase Project. All rights reserved.</p>
+    </footer>
+
+    <script src="basic.js"></script>
   </body>
 </html>
