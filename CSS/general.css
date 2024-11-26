@@ -93,7 +93,7 @@ header {
 .hero {
   position: relative;
   height: 80vh;
-  background-image: url("/Images/Hero-Vase-exhibition-Camera.png"); /* Updated path */
+  background-image: url("/images/Hero-Vase-exhibition-Camera.png"); /* Updated path */
   background-size: cover;
   background-position: center;
   display: flex;
