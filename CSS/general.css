@@ -60,7 +60,7 @@ header {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 10px;
   margin: 0;
   padding: 0;
 }
@@ -411,6 +411,10 @@ footer p {
     font-size: 1rem;
     padding: 0.6rem 2rem;
   }
+  .menu-toggle,
+  .close-menu {
+    display: none;
+  }
   .responsive-nav {
     justify-content: center; /* Center nav links */
   }
@@ -481,33 +485,51 @@ footer p {
     padding: 0.5rem 1.5rem;
   }
   .responsive-nav {
-    justify-content: flex-start; /* Align to left */
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
   }
 
   .menu-toggle {
     display: flex;
-    z-index: 1001;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001; /* Keep it above the menu */
   }
 
+  .menu-toggle .bar {
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+
+  /* Position and styling for the nav links */
   .nav-links {
     display: none;
     flex-direction: column;
     background-color: #333;
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    padding: 15px;
-    border-radius: 8px;
+    position: fixed; /* Fix the menu to the screen */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the screen */
+    height: auto; /* Allow it to resize based on the content */
+    padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%); /* Start hidden off-screen */
   }
 
   .nav-links.active {
     display: flex;
+    transform: translateY(0); /* Slide in the menu from the top */
   }
 
   .nav-links li {
-    margin: 8px 0;
+    margin: 16px 0;
   }
 
   .nav-links a {
@@ -523,6 +545,70 @@ footer p {
     background-color: #444;
     border-radius: 4px;
   }
+
+  /* Close icon positioning */
+  .close-menu {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1002; /* Ensure it's above other menu items */
+  }
+
+  .close-menu:hover {
+    color: #ccc;
+  }
+
+  .close-menu span {
+    font-weight: bold;
+  }
+
+  .nav-container {
+    position: relative;
+    z-index: 999; /* Ensure it stays above other content */
+  }
+  /* Positioning and styling for the close icon */
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1002; /* Ensure it's above other menu items */
+  }
+
+  .close-menu svg {
+    width: 36px; /* Size of the close icon */
+    height: 36px; /* Size of the close icon */
+    fill: white; /* Default fill color */
+    transition: fill 0.3s ease; /* Smooth color transition */
+  }
+
+  /* Change color when hovered over */
+  .close-menu:hover svg {
+    fill: #ccc; /* Lighter color on hover */
+  }
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
   .hero {
     height: 70vh;
     background-position: center 30%;
@@ -594,33 +680,51 @@ footer p {
     padding: 1rem;
   }
   .responsive-nav {
-    justify-content: flex-start; /* Align to left */
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
   }
 
   .menu-toggle {
     display: flex;
-    z-index: 1001;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001; /* Keep it above the menu */
   }
 
+  .menu-toggle .bar {
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+
+  /* Position and styling for the nav links */
   .nav-links {
     display: none;
     flex-direction: column;
     background-color: #333;
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    padding: 15px;
-    border-radius: 8px;
+    position: fixed; /* Fix the menu to the screen */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the screen */
+    height: auto; /* Allow it to resize based on the content */
+    padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%); /* Start hidden off-screen */
   }
 
   .nav-links.active {
     display: flex;
+    transform: translateY(0); /* Slide in the menu from the top */
   }
 
   .nav-links li {
-    margin: 8px 0;
+    margin: 16px 0;
   }
 
   .nav-links a {
@@ -635,6 +739,69 @@ footer p {
   .nav-links a:hover {
     background-color: #444;
     border-radius: 4px;
+  }
+
+  /* Close icon positioning */
+  .close-menu {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1002; /* Ensure it's above other menu items */
+  }
+
+  .close-menu:hover {
+    color: #ccc;
+  }
+
+  .close-menu span {
+    font-weight: bold;
+  }
+
+  .nav-container {
+    position: relative;
+    z-index: 999; /* Ensure it stays above other content */
+  }
+  /* Positioning and styling for the close icon */
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1002; /* Ensure it's above other menu items */
+  }
+
+  .close-menu svg {
+    width: 36px; /* Size of the close icon */
+    height: 36px; /* Size of the close icon */
+    fill: white; /* Default fill color */
+    transition: fill 0.3s ease; /* Smooth color transition */
+  }
+
+  /* Change color when hovered over */
+  .close-menu:hover svg {
+    fill: #ccc; /* Lighter color on hover */
+  }
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
   .hero {
     height: 40vh;
@@ -711,24 +878,6 @@ footer p {
     font-size: 0.95rem;
     line-height: 1.5;
   }
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
 
   .luxury-section {
     padding: 20px;
@@ -774,38 +923,51 @@ footer p {
     padding: 8px;
   }
   .responsive-nav {
-    justify-content: flex-start; /* Align to left */
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
   }
 
   .menu-toggle {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001; /* Keep it above the menu */
   }
 
-  .nav-container {
-    padding: 10px;
-  }
-  .nav-logo {
-    height: 25px;
+  .menu-toggle .bar {
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
   }
 
+  /* Position and styling for the nav links */
   .nav-links {
     display: none;
-    position: absolute;
-    top: 100%;
+    flex-direction: column;
+    background-color: #333;
+    position: fixed; /* Fix the menu to the screen */
+    top: 0;
     left: 0;
-    width: 100%;
-    background: white;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width of the screen */
+    height: auto; /* Allow it to resize based on the content */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%); /* Start hidden off-screen */
   }
 
   .nav-links.active {
     display: flex;
-    flex-direction: column;
+    transform: translateY(0); /* Slide in the menu from the top */
   }
 
   .nav-links li {
-    margin: 10px 0;
+    margin: 16px 0;
   }
 
   .nav-links a {
@@ -820,6 +982,69 @@ footer p {
   .nav-links a:hover {
     background-color: #444;
     border-radius: 4px;
+  }
+
+  /* Close icon positioning */
+  .close-menu {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1002; /* Ensure it's above other menu items */
+  }
+
+  .close-menu:hover {
+    color: #ccc;
+  }
+
+  .close-menu span {
+    font-weight: bold;
+  }
+
+  .nav-container {
+    position: relative;
+    z-index: 999; /* Ensure it stays above other content */
+  }
+  /* Positioning and styling for the close icon */
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1002; /* Ensure it's above other menu items */
+  }
+
+  .close-menu svg {
+    width: 36px; /* Size of the close icon */
+    height: 36px; /* Size of the close icon */
+    fill: white; /* Default fill color */
+    transition: fill 0.3s ease; /* Smooth color transition */
+  }
+
+  /* Change color when hovered over */
+  .close-menu:hover svg {
+    fill: #ccc; /* Lighter color on hover */
+  }
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
   .hero {
     height: 50vh;
