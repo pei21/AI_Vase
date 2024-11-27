@@ -92,7 +92,7 @@ header {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,6 +199,7 @@ header {
 }
 
 .about-description {
+  text-align: center;
   padding: 0 40px;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -804,7 +805,7 @@ footer p {
     display: flex;
   }
   .hero {
-    height: 40vh;
+    height: 50vh;
     width: 100%;
     background-position: center 25%;
   }
@@ -1047,7 +1048,8 @@ footer p {
     display: flex;
   }
   .hero {
-    height: 50vh;
+    height: 40vh;
+    width: 100%;
     background-position: center 20%;
   }
 
@@ -1067,7 +1069,7 @@ footer p {
 
   .hero-btn {
     padding: 8px 16px;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
   }
 
   .hero-overlay {
@@ -1078,13 +1080,13 @@ footer p {
   }
 
   .about-text h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
   .about-description p {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.8;
     margin-bottom: 15px;
   }
 
@@ -1096,9 +1098,8 @@ footer p {
   .feature {
     padding: 15px;
   }
-
-  .feature-icon {
-    font-size: 2rem;
+  .feature p {
+    font-size: 0.85rem;
   }
   /* Main Vase Section */
   .main-vase {
